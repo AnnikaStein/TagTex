@@ -27,3 +27,4 @@ It is advisable to check with a 100% scaled view of the resulting PDF if the siz
 - Rheinland-Pfalz Open 2023
 - Everstädter Einsteiger Event / Darmstadt Dodecahedron Days 2023
 - Kölner Kubing 2023
+- German Open 2024

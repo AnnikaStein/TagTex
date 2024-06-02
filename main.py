@@ -81,19 +81,19 @@ for i in range(len(competitor_ids)):
         name_string_a, name_string_b = name_string.split('(')
         name_string_a = name_string_a[:-1]
         name_string_b = name_string_b[:-1]
-        tex_builder += '\\textbf{\\centering \\begin{minipage}{82mm}\\centering '+ name_string_a + '\\end{minipage}\\vspace{1.5mm}}'
+        tex_builder += '\\textbf{\\centering \\begin{minipage}{86mm}\\centering '+ name_string_a + '\\end{minipage}\\vspace{1.5mm}}'
         tex_builder += '}'
         tex_builder += '\\\\'
         if countries[i] == 'Russia' or countries[i] == 'Ukraine':
             tex_builder += ' \\selectlanguage{russian} '
-        if countries[i] == 'China':
+        if countries[i] == 'China' or wca_ids[i] == '2018XIAO03':
             tex_builder += ' \\begin{CJK*}{UTF8}{gbsn} '
             tex_builder += '(' + name_string_b + ')'
             tex_builder += ' \\end{CJK*}'
         else:
             tex_builder += '(' + name_string_b + ')'
     else:
-        tex_builder += '\\textbf{\\centering \\begin{minipage}{82mm}\\centering '+ name_string + '\\end{minipage}}}'
+        tex_builder += '\\textbf{\\centering \\begin{minipage}{86mm}\\centering '+ name_string + '\\end{minipage}}}'
     tex_builder += '\\\\ '
     
     
@@ -118,7 +118,8 @@ for i in range(len(competitor_ids)):
     if optional_role_string != '':
         tex_builder += '\\selectlanguage{english} \\ \\\\ ' + '\\textcolor{Red}{' + optional_role_string + '} \\\\ '
     
-    tex_builder += '\\selectlanguage{english} \\begin{tabular}{lcr}	\\qquad &  \\qquad & \\qquad  \\\\' + wca_id_string + '&' + country_string + '& ID: ' + f'{competitor_id_string}' + '\\\\ \\end{tabular}'
+    #tex_builder += '\\selectlanguage{english} \\begin{tabular}{lcr}	\\qquad &  \\qquad & \\qquad  \\\\' + wca_id_string + '&' + country_string + '& ID: ' + f'{competitor_id_string}' + '\\\\ \\end{tabular}'
+    tex_builder += '\\selectlanguage{english} \\begin{tabular}{lr}	\\qquad &  \\qquad  \\\\' + wca_id_string + '&' + country_string + '\\\\ \\end{tabular}'
     
     tex_builder += '}'
     
