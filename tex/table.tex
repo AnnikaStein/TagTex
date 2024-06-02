@@ -1,0 +1,13 @@
+% blueprint table, idea is to style according needs
+% - opportunity with images for events
+% only events held at the comp are shown
+
+\newcommand{\tab}[1]{
+\fontsize{9pt}{9pt}\selectfont
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{ c c c c c c c }
+  \rowcolor{gray!50}
+  \bfseries event & \bfseries comp & \bfseries scr & \bfseries judge & \bfseries run\\ 
+  #1 
+\end{tabular}
+}

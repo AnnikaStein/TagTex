@@ -1,29 +1,38 @@
 # TagTex
-Creating custom nametags, badges. Planning to use Python + LaTeX only.
+Creating custom nametags, badges. ~~Planning to use~~ Using Python + LaTeX only.
 
 ### Preparation:
-1. download two (!) .csv files from your competition registration list.  
-  a) select only the registered competitors (accepted / "bestätigt"), save this as `YOURCOMPETITIONID-registration.csv`, example `GermanNationals2023-registration.csv`  
-  b) select ALL people who have ever registered for the competition, including waitlist or deleted registrations, save as for example `YOURCOMPETITIONID-registration-all.csv`, example: `GermanNationals2023-registration-all.csv`
-
-2. download and extract the WCA database in tsv format.  
-  place `WCA_export.tsv` in a suitable directory and let the script `main.py` know where to find this information on your device, fill out the hardcoded variable `WCA_database_path` for that purpose.
+- you need python
+- install dependencies (i would recomend using a virtual enviornment (but up to you to figure out how and if))
+```shell
+pip install -r requirements.txt
+```
+- you need latex (texlive for example)
+- additional not included in must texlive instalations: [texlive-lang](https://wiki.archlinux.org/title/TeX_Live/CJK)
 
 ### Example usage:
 ```shell
-python main.py -c ../wca-competition-orga/GermanNationals2023-registration -id GermanNationals2023 > output.txt
+python main.py -c <comp id>
 ```
-This output can be placed in the template document and will serve as the content to be formatted into printable nametags.
+Output is stored in tex/content.tex and contains all relevant info for competitor tags. Additional tex/name.tex will be created, only containing comp name.
+If you want to sort the nametags alphabetically, just add `-o name` to the script. (The default is `-o id` which sorts by time of registration, i.e. the WCA Live ID.)
 
-If you want to sort the nametags alphabetically, just add `-o name` to the script, e.g. you could do
+In order to get a pdf do
 ```shell
-python main.py -c ../wca-competition-orga/GermanNationals2023-registration -id GermanNationals2023 -o name > output.txt
+cd tex
+pdflatex lables-tamplate.tex
 ```
-(The default is `-o id` which sorts by time of registration, i.e. the WCA Live ID.)
-
 It is advisable to check with a 100% scaled view of the resulting PDF if the size fits with your physical nametags before printing and cutting. The labels package documentation can assist with choosing other dimensions for whitespace on the sheets or a different setup of the grid, and the current example has been tested with 55 x 90 mm tags.
 
-#### Used at
-- Rheinland-Pfalz Open 2023
-- Everstädter Einsteiger Event / Darmstadt Dodecahedron Days 2023
-- Kölner Kubing 2023
+# todo
+
+- duplex drucker
+    - welp latex kann das wohl nicht so einfach
+- man kann noch über flaggen bei ländern nachdenken
+- event symbols
+- nicht genutzte assignments
+- irgendwie schön comp logos noch reinbasteln (auch optional steuerbar)
+- Tag größe über parameter steuern
+- tabelle mit assignments von unten nach oben wachsen lassen (weil klammer)
+- Comp Logo/WCA Logo integrieren (siehe Wendlingen NameTag)
+- Georgisch, Thai Namen suppot (allgemein nochmal schauen was für Zeichensätze es noch gibt, die hier auf Comps auftauchen könnten)

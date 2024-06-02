@@ -1,0 +1,55 @@
+%%%%
+% inspired by:  https://tex.stackexchange.com/questions/94582/automating-the-creation-of-name-badges-for-an-event
+% discoverd docs: https://ctan.net/macros/latex/contrib/ticket/doc/manual.pdf
+%%%%
+% use the corresponding paper size for your ticket definition
+\documentclass[a4paper,12pt]{article}
+
+% load misc stuff
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{adjustbox}
+
+% language stuff
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage[ukrainian,german]{babel}
+
+% load ticket.sty with the appropriate ticket definition
+\usepackage[flashCard,boxed]{ticket} 
+
+% size of nametags
+\unitlength=1mm
+\ticketSize{90}{55}
+\ticketNumbers{2}{5}
+
+\begin{document}
+%% --- front ----%
+% default nametag. \ticketdefault is somewhat like a background
+\renewcommand{\ticketdefault}{%
+  \put(45, 2){\makebox[0mm]{\includegraphics[width=42mm]{img/GCA_original_larger}}}
+  \put(45, 45){\makebox[0mm]{\maxsizebox*{78mm}{9.2mm}{\Large \input{name}}}}
+}
+
+% comp/ person specific stuff
+\newcommand{\card}[5]{\ticket{%
+    \put(45,36){\makebox[0mm]{\maxsizebox*{78mm}{6.1mm}{\bfseries\Large #1}}}
+    \put(45,30){\makebox[0mm]{\bfseries #2}}%
+    \put(45,25.5){\makebox[0mm]{id: #4}}%
+    \put(45,20){\makebox[0mm]{\bfseries\large #3}}%
+}}
+
+\input{table}
+
+\sffamily
+\input{content}
+% % --- changes for back side ---%
+\backside%
+\oddsidemargin=-22mm %same as marigin on right on even pages
+\renewcommand{\ticketdefault}{%
+}
+\renewcommand{\card}[5]{\ticket{%
+  \put(45,27){\makebox[0mm]{\tab{#5}}}%
+}}
+\input{content}
+\end{document}
