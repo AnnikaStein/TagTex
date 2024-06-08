@@ -1,0 +1,44 @@
+% excellent stuff: https://rsmith.home.xs4all.nl/howto/printing-labels-with-latex.html
+\documentclass[a4paper,9pt]{scrarticle}
+\usepackage[T1,T2A]{fontenc}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{CJKutf8}
+\usepackage{tgpagella} % Default fonts
+\usepackage{cmbright} % sans serif everywhere
+\usepackage{helvet}
+\usepackage{FiraSans}
+
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage[newdimens]{labels}
+\usepackage{xpatch}
+
+\makeatletter
+\xpatchcmd{\BuildB@x}{\vss}{}{}{}
+\makeatother
+\LabelGridtrue
+\LabelCols=2
+\LabelRows=5
+\LeftPageMargin=12mm
+\RightPageMargin=12mm
+\TopPageMargin=2mm
+\BottomPageMargin=2mm
+\InterLabelRow=0mm
+\LeftLabelBorder=0mm
+\RightLabelBorder=0mm
+\TopLabelBorder=1mm
+\BottomLabelBorder=1mm
+% Create an empty label; for if the label has already been used
+\newcommand{\emptylabel}{\rule{0mm}{22mm}}
+
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{svg}
+
+\begin{document}
+% This is where your labels go
+
+\end{document}
