@@ -1,7 +1,7 @@
 # TagTex
 Creating custom nametags, badges with Python + LaTeX( + inkscape).
 
-Here are some infos that worked for me, but they are rather meant as notes and no support is offered.
+Here are some infos that worked for me (e.g. with `conda activate cubing` that includes some stuff like pandas, numpy...), but they are rather meant as notes and no support is offered.
 
 ### 0. Get TagTex:
 If you have an ssh-key from your device to GitHub (or select a different option on the repo page).
@@ -59,7 +59,7 @@ python labelsPDFmerger.py -s RLP24 -n 20 -a yes > mergedRLP24.txt
 
 ### 4. Used at
 - Rheinland-Pfalz Open 2023
-- Everstädter Einsteiger Event / Darmstadt Dodecahedron Days 2023
+- Eberstädter Einsteiger Event / Darmstadt Dodecahedron Days 2023
 - Kölner Kubing 2023
 - German Open 2024
 - Rheinland-Pfalz Open 2024
