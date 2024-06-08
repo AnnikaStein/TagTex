@@ -41,6 +41,7 @@ This output can be placed in the template document and will serve as the content
 python main.py -c ../wca-competition-orga/RheinlandPfalzOpen2024-registration -id RheinlandPfalzOpen2024 -o name > outputRLP24.txt
 ```
 (The default is `-o id` which sorts by time of registration, i.e. the WCA Live ID.)
+
 2. Put the front and the back labels into their respective templates. [ALWAYS]  
   there are two templates, using slightly different configs. For each comp, clone them and replace the shortname-placeholder. Inject the output of the previous step via good old copy-paste in both documents respectively.
 
