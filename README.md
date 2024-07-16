@@ -63,6 +63,7 @@ python labelsPDFmerger.py -s RLP24 -n 20 -a yes > mergedRLP24.txt
 - Kölner Kubing 2023
 - German Open 2024
 - Rheinland-Pfalz Open 2024
+- Darmstadt Dodecahedron Days 2024
 
 ### 5. Annika's thanks go to...
 - Sophia Schmoll - wcif api usage and first implementation of the combined front / back (see [phie-dev](https://github.com/AnnikaStein/TagTex/tree/phie-dev) branch for details, using a slightly different approach)
